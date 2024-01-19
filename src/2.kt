@@ -1,23 +1,18 @@
 fun main() {
+    myfunc()
+}
+
+fun myfunc() {
     while (true) {
         print("Введите 1 число: ")
         val first = readLine()!!
-        val a: Int = first.toInt()
+        val num1: Int = first.toInt()
         print("Введите 2 число: ")
         val second = readLine()!!
-        val b: Int = second.toInt()
+        val num2: Int = second.toInt()
         print("Введите операцию над числами: ")
         val sign = readLine()!!
-        when (sign) {
-            "+" -> {
-                val r = a + b
-                println("" + a + " + " + b + " = " + r)
-            }
-            "-" -> println("$a - $b = ${a - b}")
-            "/" -> println(a / b)
-            "*" -> println(a * b)
-            else -> println("Ошибка")
-        }
+        calculate(num1, num2, sign)
         println("Введите 1, чтобы продолжить выполнение программы")
         println("Введите 2, завершить программу")
         val choose = readLine()!!
@@ -25,5 +20,18 @@ fun main() {
         if (ch == 2) {
             break
         }
+    }
+}
+
+fun calculate(num1:Int, num2:Int, sign:String="+") {
+    when (sign) {
+        "+" -> {
+            val r = num1 + num2
+            println("" + num1 + " + " + num2 + " = " + r)
+        }
+        "-" -> println("$num1 - $num2 = ${num1 - num2}")
+        "/" -> println(num1 / num2)
+        "*" -> println(num1 * num2)
+        else -> println("Ошибка")
     }
 }
