@@ -7,17 +7,13 @@ fun main() {
     val b: Int = second.toInt()
     print("Введите операцию над числами: ")
     val sign = readLine()!!
-
-    if (sign == "/") {
-        print(a.toFloat() / b)
-    }
-    if (sign == "*") {
-        print(a * b)
-    }
-    if (sign == "+") {
-        print(a + b)
-    }
-    if (sign == "-") {
-        print(a - b)
+    when (sign) {
+        "+" -> {
+            val r = a + b
+            print("" + a + " + " + b)
+        }
+        "-" -> print("$a - $b = ${a - b}")
+        "/" -> print(a / b)
+        else -> print("Ошибка")
     }
 }
