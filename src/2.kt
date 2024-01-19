@@ -24,14 +24,14 @@ fun myfunc() {
 }
 
 fun calculate(num1:Int, num2:Int, sign:String="+"):String {
-    when (sign) {
+    return when (sign) {
         "+" -> {
             val r = num1 + num2
             return "" + num1 + " + " + num2 + " = " + r
         }
-        "-" -> return "$num1 - $num2 = ${num1 - num2}"
-        "/" -> return "$num1 / $num2 = ${num1.toFloat() / num2}"
-        "*" -> return "$num1 - $num2 = ${num1 - num2}"
-        else -> return "Ошибка"
+        "-" -> "$num1 - $num2 = ${num1 - num2}"
+        "/" -> "$num1 / $num2 = ${num1.toFloat() / num2}"
+        "*" -> "$num1 - $num2 = ${num1 - num2}"
+        else -> "Ошибка"
     }
 }
