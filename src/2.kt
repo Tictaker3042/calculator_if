@@ -12,7 +12,7 @@ fun myfunc() {
         val num2: Int = second.toInt()
         print("Введите операцию над числами: ")
         val sign = readLine()!!
-        calculate(num1, num2, sign)
+        println(calculate(num1, num2, sign))
         println("Введите 1, чтобы продолжить выполнение программы")
         println("Введите 2, завершить программу")
         val choose = readLine()!!
@@ -23,15 +23,15 @@ fun myfunc() {
     }
 }
 
-fun calculate(num1:Int, num2:Int, sign:String="+") {
+fun calculate(num1:Int, num2:Int, sign:String="+"):String {
     when (sign) {
         "+" -> {
             val r = num1 + num2
-            println("" + num1 + " + " + num2 + " = " + r)
+            return "" + num1 + " + " + num2 + " = " + r
         }
-        "-" -> println("$num1 - $num2 = ${num1 - num2}")
-        "/" -> println(num1 / num2)
-        "*" -> println(num1 * num2)
-        else -> println("Ошибка")
+        "-" -> return "$num1 - $num2 = ${num1 - num2}"
+        "/" -> return "$num1 / $num2 = ${num1.toFloat() / num2}"
+        "*" -> return "$num1 - $num2 = ${num1 - num2}"
+        else -> return "Ошибка"
     }
 }
