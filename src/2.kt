@@ -27,7 +27,7 @@ fun calculate(num1:Int, num2:Int, sign:String="+"):String {
     return when (sign) {
         "+" -> {
             val r = num1 + num2
-            return "" + num1 + " + " + num2 + " = " + r
+            "" + num1 + " + " + num2 + " = " + r
         }
         "-" -> "$num1 - $num2 = ${num1 - num2}"
         "/" -> "$num1 / $num2 = ${num1.toFloat() / num2}"
