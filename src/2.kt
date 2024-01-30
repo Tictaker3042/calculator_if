@@ -4,22 +4,32 @@ fun main() {
 
 fun myfunc() {
     while (true) {
-        print("Введите 1 число: ")
-        val first = readLine()!!
-        val num1: Int = first.toInt()
-        print("Введите 2 число: ")
-        val second = readLine()!!
-        val num2: Int = second.toInt()
-        print("Введите операцию над числами: ")
-        val sign = readLine()!!
-        println(calculate(num1, num2, sign))
-        println("Введите 1, чтобы продолжить выполнение программы")
-        println("Введите 2, завершить программу")
-        val choose = readLine()!!
-        val ch: Int = choose.toInt()
-        if (ch == 2) {
-            break
-        }
+        try {
+            print("Введите 1 число: ")
+            val first = readLine()!!
+            val num1: Int = first.toInt()
+            print("Введите 2 число: ")
+            val second = readLine()!!
+            val num2: Int = second.toInt()
+            print("Введите операцию над числами: ")
+            val sign = readLine()!!
+            println(calculate(num1, num2, sign))
+            println("Введите 1, чтобы продолжить выполнение программы")
+            println("Введите 2, завершить программу")
+            val choose = readLine()!!
+            val ch: Int = choose.toInt()
+            if (ch == 2) {
+                break
+            }
+            }
+            catch(e: NumberFormatException) {
+                println("Неправильный ввод")
+                println(e.javaClass)
+            }
+            catch (e: Exception){
+                println("Неправильный ввод")
+                println(e.javaClass)
+            }
     }
 }
 
